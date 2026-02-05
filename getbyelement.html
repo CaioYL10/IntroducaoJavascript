@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Element By Id</title>
+</head>
+<body>
+    <h2>Monte o seu Suco do Jeito que Quiser!</h2>
+    <p>Você pode escolher uma, várias ou todas as frutas:</p>
+
+    <select id="frutas" multiple size="3" style="width: 180px;">
+        <option value="morango">🍓 Morango</option>
+        <option value="banana">🍌 Banana</option>
+        <option value="abacaxi">🍍 Abacaxi</option>
+    </select>
+    <br><small>(Use Ctrl ou Shift para Selecionar várias frutas)</small><br><br>
+
+    <button type="button" onclick="selecionarTodas()">Selecionar Todas 🍓🍌🍍</button><br><br>
+
+    <label>Escolha o Líquido:</label><br>
+    <input type="radio" name="liquido" value="agua" checked> Água 💧 <br>
+    <input type="radio" name="liquido" value="leite"> Leite 🥛<br><br>
+
+    <label>Açúcar?</label><br>
+    <input type="checkbox" id="acucar"> Sim, quero açúcar 🍬 <br><br>
+
+    <button onclick="fazerSuco()">Preparar Suco!</button>
+
+    <script>
+        function fazerSuco() {
+            let frutasSelecionadas = Array.from(document.getElementById("frutas").selectedOptions).map(opcao => opcao.value);
+
+            let liquido = document.querySelector("input[name='liquido']:checked").value;
+
+            let acucar = document.getElementById("acucar").checked ? "com acucar" : "sem acucar";
+
+            if (frutasSelecionadas.length === 0) {
+                alert("⚠️ Por favor, selecione pelo menos uma fruta!");
+                return;
+            }
+
+            let frutasTexto = frutasSelecionadas.join(" e ");
+
+            let sucoFinal = `🥤 Seu suco de ${frutasTexto} com ${liquido} ${acucar} está pronto!`;
+
+            alert(sucoFinal);
+        }
+
+        function selecionarTodas() {
+            let lista = document.getElementById("frutas");
+            for (let i = 0; i < lista.options.length; i++) {
+                lista.options[i].selected = true;
+            }
+            alert("✅ Todas as frutas foram selecionadas!");
+        }
+    </script>
+</body>
+</html>

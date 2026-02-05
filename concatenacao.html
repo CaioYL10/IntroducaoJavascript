@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Olá Mundo em Javascript</title>
+</head>
+<body>
+    <h1>Exemplo de Javascript</h1>
+
+    <form name="formulario" method="POST" class="form">
+        <input type="text" id="nome" name="nome" placeholder="Nome" class="input"><br>
+        <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome" class="input"> <br>
+        <input type="button" onclick="salvar()" value="Confirmar" class="input"> 
+        <input type="button" onclick="excluir()" value="Cancelar" class="input">
+        <input type="button" onclick="alerta()" value="Receber Alerta" class="input">
+    </form>
+    <p id="nomecompleto"></p>
+</body>
+
+<script>
+        var nome1;
+        var sobrenome1;
+        var nomecompleto1;
+
+        function salvar() {
+            nome1 = document.formulario.nome.value;
+            sobrenome1 = document.formulario.sobrenome.value;
+            var nomecompleto2 = nome1 + ' ' + sobrenome1;
+
+            
+            nomecompleto1 = document.getElementById('nomecompleto');
+            nomecompleto1.innerHTML = nomecompleto2;
+        }
+
+        function excluir() {
+            nomecompleto1.innerHTML = '';
+            window.location.reload()
+        }
+
+        function alerta() {
+            nome1 = document.formulario.nome.value;
+            sobrenome1 = document.formulario.sobrenome.value;
+            var nomecompleto2 = nome1 + ' ' + sobrenome1;
+            window.alert ('Seu nome é ' + nomecompleto2);
+        }
+        
+    </script>
+
+    <style>
+        .input {
+            margin-top: 10px;
+        }
+    </style>
+</html>

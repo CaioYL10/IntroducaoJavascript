@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Somando Números!</h1>
+    <p id="resultado"></p>
+    <input type="button" value="Voltar" id="voltar" name="voltar" onclick="voltar()">
+
+    <script>
+        var number1;
+        var nurmber2;
+        var conta;
+        var result;
+
+        number1 = window.prompt ('Informe seu primeiro número aqui:' , 'Digite aqui');
+        number2 = window.prompt ('Informe seu segundo número aqui:' , 'Digite aqui');
+
+        conta = parseInt(number1) + parseInt(number2);
+        
+        result = document.getElementById('resultado');
+
+        result.innerHTML = ('Seu resultado é: ' + conta);
+
+        
+
+        function voltar() {
+            window.location.reload()
+        }
+    </script>
+</body>
+</html>
