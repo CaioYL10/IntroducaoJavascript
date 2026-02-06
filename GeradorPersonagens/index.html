@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <title>Gerador de Personagens RPGS</title>
+</head>
+<body>
+    <div class="container">
+        <div class="tudo">
+            <div class="titulo">
+                <h1>Monte seu Personagem de RPG!!!</h1>
+                <p>Você só pode escolher uma das opções...</p>
+            </div>
+
+            <div class="form">
+                <input type="text" id="nome" placeholder="Nome do Personagem">
+
+                <select id="classe">
+                    <option disabled selected hidden value="1">--- Selecione à Classe ---</option>
+                    <option value="mago">🧙‍♂️ Mago</option>
+                    <option value="escudeiro">🛡️ Escudeiro</option>
+                    <option value="samurai">🥷 Samurai</option>
+                    <option value="espadachim">⚔️ Espadachim</option>
+                    <option value="arqueiro">🏹 Arqueiro</option>
+                    <option value="monge">👩‍🦲 Monge</option>
+                    <option value="goblin">🧌 Goblin</option>
+                    <option value="animal">🦁 Animal</option>
+                    <option value="anjo">👼 Anjo</option>
+                    <option value="atirador">🔫 Atirador</option>
+                    <option value="rei">👑 Rei</option>
+                </select>
+                <select id="poder">
+                    <option disabled selected hidden value="1">--- Selecione o Poder ---</option>
+                    <option value="Fogo">🔥 Fogo</option>
+                    <option value="Água">💧 Água</option>
+                    <option value="Raio">🌩️ Relâmpago</option>
+                    <option value="Terra">🌍 Terra</option>
+                    <option value="Ar">🍃 Ar</option>
+                    <option value="Rio da Imortalidade">🐦‍🔥 Rio da imortalidade</option>
+                    <option value="Escudo Impenetrável">🛡️ Escudo Impenetrável</option>
+                    <option value="Firmamento Divino">😇 Firmamento Divino</option>
+                </select>
+
+                <input type="text" id="apelido" placeholder="Como ele é conhecido?">
+
+                <input type="text" id="foto" placeholder="Coloque o link da sua foto!">
+
+                <button type="button" id="concluir" onclick="confirmar()">Confirmar</button>
+            </div>
+
+            <img src="" alt="">
+        </div>
+
+        <div class="resultado">
+                <div id="foto2" class="foto2"></div>
+                <div class="escrita">
+                    <p id="resultado"></p> 
+                </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
