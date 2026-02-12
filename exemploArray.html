@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Array</title>
+</head>
+<body>
+    <h1>Exemplo de uso de Array em JavaScript 🍇🍈🍉</h1>
+
+    <div id="resultado"></div>
+
+    <div id="resultadoo"></div>
+
+    <div style="text-align: center;">
+        <button onclick="mostrarFrutas()">Mostrar Frutas</button>
+        <button onclick="adicionarFrutas()">Adicionar Fruta</button>
+        <button onclick="adicionarPreco()">Adicionar Preço</button>
+        <button onclick="removerUltima()">Remover Última</button>
+    </div>
+
+    <script>
+        let frutas = [];
+
+        function mostrarFrutas() {
+            let resultadoDiv = document.getElementById("resultado");
+
+            if (frutas.length === 0) {
+                resultadoDiv.innerHTML = `
+                    <strong>Array Completo:</strong> [] <br>
+                    <strong>Quantidade de Frutas:</strong> 0 <br>
+                    <em>O Array está VAZIO</em>
+                `
+            } else {
+                resultadoDiv.innerHTML = `
+                    <strong>Array Completo:</strong> [${frutas.join(", ")}] <br>
+                    <strong>Quantidade de Frutas:</strong> ${frutas.length} <br>
+                `
+            };
+        }
+
+        function adicionarFrutas() {
+            let novaFruta = prompt("Digite o nome da nova Fruta:")
+
+            if (novaFruta) {
+                frutas.push(novaFruta);
+
+                mostrarFrutas();
+            }
+        }
+
+        function removerUltima() {
+            if (frutas.length > 0) {
+                frutas.pop();
+            } else {
+                alert ("O Array já está VAZIO!")
+            }
+
+            mostrarFrutas()
+        }
+
+        function adicionarPreco() {
+            let qualfruta = prompt("Qual a fruta que você quer colocar preço?")
+            let encontrado = frutas.find(fruta => fruta == qualfruta);
+            if (encontrado) {
+                let preco = prompt ("Qual o Preço da Fruta?")
+                let resultado2 = document.getElementById('resultadoo');
+                resultado2.innerHTML += `Preço: ${encontrado}, R$${preco} <br>`;
+            } else {
+                let resultado2 = document.getElementById('resultadoo');
+                resultado2.innerHTML = `Você não adicionou essa Fruta!`;
+            }
+
+            
+        }
+    </script>
+</body>
+</html>
