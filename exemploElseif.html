@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else if</title>
+</head>
+<body>
+    <h1 style="font-family: sans-serif;">Exemplo de Else If!</h1>
+    <input type="number" id="nota" placeholder="Coloque sua Nota!">
+    <button onclick="desempenho()">Ver Desempenho</button>
+
+    <script>
+        function desempenho() {
+            let desempenhoTexto = document.getElementById('nota').value;
+            desempenho = Number(desempenhoTexto);
+
+            if (desempenho > 10) {
+                alert ('Nota inválida... ❌');
+            }
+            else if (desempenho >= 9) {
+                alert ('Seu desempenho foi Excelente 🟩')
+            } else if (desempenho >= 7) {
+                alert ('Seu desempenho foi Médio 🟨')
+            } else if (desempenho < 0) {
+                alert ('Nota inválida... ❌');
+            }
+             else {
+                alert ('Seu desempenho foi Baixo, Boa sorte na próxima... 🟥');
+            }
+        }
+    </script>
+</body>
+</html>
