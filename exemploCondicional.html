@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando Condicional!</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; background-color: #f0f2f5;}
+        .painel {background-color: white; padding: 20px; border-radius: 10px; display: inline-block;}
+        input {padding: 10px; width: 80px; font: 18px;}
+        button {padding: 10px 20px; cursor: pointer; background-color: #28a745; color: white; border: none; border-radius: 5px;}
+    </style>
+</head>
+<body>
+    <div class="painel">
+        <h2>Radar Eletrônico</h2>
+        <p>Limite de Velocidade: <strong>80 km/h</strong></p>
+        <input type="number" id="velocidade" placeholder="km/h">
+        <button onclick="verificarVelocidade()">Verificar</button>
+        <h3 id="msg"></h3>
+    </div>
+
+    <script>
+        function verificarVelocidade() {
+            let velocidadeTexto = document.getElementById('velocidade').value;
+            velocidade = Number(velocidadeTexto);
+            let resultado = document.getElementById('msg')
+
+            if (velocidade <= 80) {
+                resultado.innerHTML = 'Dentro da velocidade!'
+                resultado.style.color = 'green';
+            } else {
+                resultado.innerHTML = "Multado! Você excedeu o limite de velocidade!"
+                resultado.style.color = 'red';
+            }
+            if (velocidade <= 0) {
+                resultado.innerHTML = 'Velocidade inválida!'
+                resultado.style.color = 'yellow';
+            }
+        }
+        
+
+        
+    </script>
+</body>
+</html>
