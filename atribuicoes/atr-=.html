@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atribuição -=</title>
+</head>
+<body>
+    <h2>Operador de Atribuição (-=)</h2>
+
+    <label>Digite um Valor para X:</label>
+    <input type="number" id="valorX"> <br> <br>
+    <label>Digite o Valor para Subtraír:</label>
+    <input type="number" id="valorSubtraido">
+    <button onclick="atribuir()">Atribuir</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function atribuir() {
+            let valorX = Number(document.getElementById('valorX').value);
+            let valorSubtraido = Number(document.getElementById('valorSubtraido').value);
+
+            valorX -= valorSubtraido;
+
+            let passo1 = `O usuário digitou: ${valorX} <br>`;
+            let passo2 = `O valor foi convertido para Número! <br>`;
+            let passo3 = `Valor Subtraindo = ${valorSubtraido} <br>`;
+            let passo4 = `Resultado Final = ${valorX} <br>`;
+
+            resultado = document.getElementById('resultado');
+            resultado.innerHTML = `${passo1} ${passo2} ${passo3} ${passo4}`;
+        }
+    </script>
+</body>
+</html>
