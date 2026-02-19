@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparação !=</title>
+</head>
+<body>
+    <h2>Operador de Comparação !=</h2>
+
+    <label>Valor 1:</label>
+    <input type="text" id="valor1"> <br><br>
+
+    <label>Valor 2:</label>
+    <input type="text" id="valor2">
+
+    <button onclick="comparar()">Comparar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function comparar() {
+            let v1 = document.getElementById('valor1').value;
+            let v2 = document.getElementById('valor2').value;
+
+            let resultado = (v1 != v2);
+
+            document.getElementById('resultado').innerHTML = 
+                `Valor 1: ${v1} (Tipo: ${typeof v1}) <br>
+                 Valor 2: ${v2} (Tipo: ${typeof v2}) <br>
+                 Operação: ${v1} != ${v2}<br>
+                 Resultado: <strong>${resultado}</strong> <br><br>
+                 OBS: Compara apenas o valor!`;
+        }
+    </script>
+</body>
+</html>
